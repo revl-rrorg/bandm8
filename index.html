@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BandM8 — Play Faster. Practice Smarter. Finish More Music.</title>
-  <meta name="description" content="The first and only Music-to-Music real time Generative AI creativity tool. A DAW plugin that listens, adapts, and plays with you." />
+  <meta name="description" content="BandM8 is a real-time, music-to-music generative AI that plays with you. Built by musicians and technologists — it listens, adapts, and suggests without judgment." />
   <link rel="preconnect" href="https://api.fontshare.com" />
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
   <style>
@@ -43,66 +43,45 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(240,245,235,0.82);
+      background: rgba(240,245,235,0.85);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
 
-    .nav-logo img {
-      height: 36px;
-      width: auto;
-      display: block;
-    }
+    .nav-logo img { height: 36px; width: auto; display: block; }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-      align-items: center;
-    }
+    nav ul { list-style: none; display: flex; gap: 2.5rem; align-items: center; }
 
     nav a {
       color: var(--text-mid);
       text-decoration: none;
       font-size: 0.88rem;
       font-weight: 500;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
       transition: color 0.2s;
     }
-
     nav a:hover { color: var(--green-deep); }
 
     .btn-nav {
-      background: var(--green-deep);
+      background: var(--green-deep) !important;
       color: var(--white) !important;
       padding: 10px 22px;
       border-radius: 100px;
       font-weight: 700 !important;
-      font-size: 0.85rem !important;
-      letter-spacing: 0.04em !important;
       transition: background 0.2s, transform 0.2s !important;
     }
+    .btn-nav:hover { background: #0f1e15 !important; transform: translateY(-1px); }
 
-    .btn-nav:hover {
-      background: var(--green-mid) !important;
-      transform: translateY(-1px);
-    }
-
-    .btn-nav-outline {
-      border: 1.5px solid var(--green-deep);
-      color: var(--green-deep) !important;
-      padding: 10px 22px;
+    .btn-nav-ghost {
+      border: 1.5px solid rgba(26,51,37,0.3) !important;
+      color: var(--text-dark) !important;
+      padding: 9px 20px;
       border-radius: 100px;
-      font-weight: 700 !important;
-      font-size: 0.85rem !important;
+      font-weight: 600 !important;
       transition: all 0.2s !important;
     }
-
-    .btn-nav-outline:hover {
-      background: var(--green-deep);
-      color: var(--white) !important;
-    }
+    .btn-nav-ghost:hover { border-color: var(--green-deep) !important; background: rgba(26,51,37,0.05); }
 
     /* ─── HERO ─── */
     .hero {
@@ -112,22 +91,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
       padding-top: 80px;
     }
 
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-
-    .hero-bg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
     .hero-content {
       position: relative;
@@ -140,34 +108,24 @@
       width: 100%;
     }
 
-    .hero-logo-lockup {
-      max-width: min(720px, 85vw);
-      width: 100%;
-      margin-bottom: 2rem;
-    }
-
-    .hero-logo-lockup img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+    .hero-logo-lockup { max-width: min(720px, 85vw); width: 100%; margin-bottom: 2rem; }
+    .hero-logo-lockup img { width: 100%; height: auto; display: block; }
 
     .hero-tagline {
-      font-size: clamp(0.85rem, 2vw, 1rem);
+      font-size: clamp(0.8rem, 2vw, 0.92rem);
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--text-mid);
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     .hero-sub {
       font-size: clamp(1rem, 2.5vw, 1.2rem);
       color: var(--text-mid);
-      max-width: 520px;
+      max-width: 560px;
       margin-bottom: 2.5rem;
-      font-weight: 400;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .hero-actions {
@@ -187,17 +145,15 @@
       color: var(--white);
       text-decoration: none;
       font-weight: 700;
-      font-size: 0.95rem;
-      padding: 15px 34px;
+      font-size: 1rem;
+      padding: 15px 36px;
       border-radius: 100px;
-      letter-spacing: 0.03em;
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
       border: none;
       cursor: pointer;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
     }
-
     .btn-primary:hover {
-      background: #122518;
+      background: #0f1e15;
       transform: translateY(-2px);
       box-shadow: 0 8px 32px rgba(26,51,37,0.25);
     }
@@ -211,28 +167,17 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
-      padding: 14px 30px;
+      padding: 14px 28px;
       border-radius: 100px;
-      border: 1.5px solid rgba(26,51,37,0.3);
+      border: 1.5px solid rgba(26,51,37,0.28);
       transition: all 0.2s;
     }
-
-    .btn-secondary:hover {
-      border-color: var(--green-deep);
-      background: rgba(26,51,37,0.06);
-    }
+    .btn-secondary:hover { border-color: var(--green-deep); background: rgba(26,51,37,0.05); }
 
     /* ─── VIDEO ─── */
-    .hero-video-wrap {
-      position: relative;
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
+    .hero-video-wrap { position: relative; width: 100%; max-width: 900px; margin: 0 auto; }
     .hero-video-wrap video {
-      width: 100%;
-      height: auto;
+      width: 100%; height: auto;
       border-radius: 24px;
       border: 6px solid rgba(196,196,196,0.5);
       display: block;
@@ -240,28 +185,16 @@
     }
 
     .mute-btn {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(0,0,0,0.55);
-      backdrop-filter: blur(8px);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s, transform 0.15s;
-      z-index: 10;
+      position: absolute; bottom: 20px; right: 20px;
+      width: 40px; height: 40px; border-radius: 50%;
+      border: none; background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(8px); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.15s; z-index: 10;
     }
+    .mute-btn:hover { background: rgba(0,0,0,0.8); transform: scale(1.1); }
 
-    .mute-btn:hover {
-      background: rgba(0,0,0,0.8);
-      transform: scale(1.1);
-    }
-
-    /* ─── FEATURES BADGES ─── */
+    /* ─── FEATURES STRIP ─── */
     .features-strip {
       background: var(--white);
       padding: 60px 5%;
@@ -271,12 +204,7 @@
       gap: 2.5rem;
       border-top: 1px solid var(--border);
     }
-
-    .features-badges img {
-      max-width: min(600px, 90vw);
-      width: 100%;
-      height: auto;
-    }
+    .features-badges img { max-width: min(600px, 90vw); width: 100%; height: auto; }
 
     /* ─── SECTION BASE ─── */
     section { padding: 100px 5%; }
@@ -300,26 +228,15 @@
       margin-bottom: 1rem;
     }
 
-    .section-sub {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
+    .section-sub { font-size: 1.05rem; color: var(--text-muted); line-height: 1.75; }
 
     /* ─── HOW IT WORKS ─── */
     .how { background: var(--cream); }
-
     .how-inner { max-width: 1200px; margin: 0 auto; }
-
     .how-header { text-align: center; margin-bottom: 5rem; }
+    .how-header .section-sub { max-width: 500px; margin: 0 auto; }
 
-    .how-header .section-sub { max-width: 480px; margin: 0 auto; }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
 
     .step {
       background: var(--white);
@@ -328,494 +245,257 @@
       padding: 2.5rem 2rem;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-
-    .step:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(26,51,37,0.1);
-    }
+    .step:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(26,51,37,0.1); }
 
     .step-num {
-      font-size: 3.5rem;
-      font-weight: 900;
-      color: var(--green-bright);
-      opacity: 0.35;
-      line-height: 1;
-      margin-bottom: 1rem;
+      font-size: 3.5rem; font-weight: 900;
+      color: var(--green-bright); opacity: 0.35;
+      line-height: 1; margin-bottom: 1rem;
     }
-
     .step-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .step h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-dark); }
+    .step p { font-size: 0.93rem; color: var(--text-muted); line-height: 1.7; }
 
-    .step h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: var(--text-dark);
+    /* ─── UNDER THE HOOD ─── */
+    .tech { background: var(--green-deep); color: var(--white); }
+    .tech .section-label { color: var(--green-light); }
+    .tech .section-title { color: var(--white); }
+    .tech .section-sub { color: rgba(255,255,255,0.6); }
+
+    .tech-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
     }
 
-    .step p {
-      font-size: 0.93rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
+    .tech-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
-    /* ─── FEATURES ─── */
-    .features { background: var(--green-deep); color: var(--white); }
-
-    .features .section-label { color: var(--green-light); }
-    .features .section-title { color: var(--white); }
-    .features .section-sub { color: rgba(255,255,255,0.6); }
-
-    .features-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .feature-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .feature-card {
+    .tech-card {
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 20px;
-      padding: 1.75rem;
+      border-radius: 20px; padding: 1.75rem;
       transition: background 0.3s, border-color 0.3s, transform 0.3s;
     }
+    .tech-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(141,196,106,0.4); transform: translateY(-4px); }
+    .tech-card.wide { grid-column: 1 / -1; }
+    .tech-card .icon { font-size: 1.6rem; margin-bottom: 0.9rem; display: block; }
+    .tech-card h4 { font-size: 0.98rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+    .tech-card p { font-size: 0.86rem; color: rgba(255,255,255,0.55); line-height: 1.65; }
 
-    .feature-card:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(141,196,106,0.4);
-      transform: translateY(-4px);
+    /* ─── WEBAPP SECTION ─── */
+    .webapp { background: var(--white); }
+    .webapp-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.2fr 1fr;
+      gap: 5rem; align-items: center;
     }
 
-    .feature-card.wide { grid-column: 1 / -1; }
-
-    .feature-card .icon { font-size: 1.6rem; margin-bottom: 0.9rem; display: block; }
-
-    .feature-card h4 {
-      font-size: 0.98rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
-
-    .feature-card p {
-      font-size: 0.86rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.6;
-    }
-
-    /* ─── BAND MEMBERS ─── */
-    .band { background: var(--white); }
-
-    .band-inner {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .band-inner .section-sub { max-width: 480px; margin: 0 auto 3rem; }
-
-    .band-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .band-member {
+    .webapp-visual {
       background: var(--cream);
       border: 1.5px solid var(--border);
-      border-radius: 18px;
-      padding: 1.5rem 1rem;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(26,51,37,0.12);
+    }
+
+    .webapp-mockup-bar {
+      background: var(--green-deep);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
+    .mockup-url {
+      margin-left: 12px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 4px 16px;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      font-family: monospace;
+    }
+
+    .webapp-mockup-body {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .mock-track {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 0.75rem;
       text-align: center;
-      transition: all 0.25s;
-      cursor: default;
     }
+    .mock-track .icon { font-size: 1.5rem; display: block; margin-bottom: 0.4rem; }
+    .mock-track .label { font-size: 0.7rem; font-weight: 700; color: var(--text-dark); display: block; }
+    .mock-track .bar { height: 4px; border-radius: 2px; margin-top: 0.6rem; background: var(--border); overflow: hidden; }
+    .mock-track .fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--green-bright), var(--green-mid)); }
 
-    .band-member:hover {
-      border-color: var(--green-bright);
-      background: rgba(109,179,86,0.08);
-      transform: translateY(-3px);
+    .mock-waveform {
+      grid-column: 1 / -1;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      height: 60px;
     }
-
-    .band-member .instrument { font-size: 2.25rem; display: block; margin-bottom: 0.5rem; }
-    .band-member .name { font-size: 0.82rem; font-weight: 700; display: block; margin-bottom: 0.2rem; color: var(--text-dark); }
-    .band-member .style { font-size: 0.72rem; color: var(--text-muted); }
-
-    .band-more {
-      font-size: 0.8rem;
-      color: var(--green-bright);
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .w-bar {
+      width: 3px; border-radius: 2px;
+      background: linear-gradient(180deg, var(--green-bright), var(--green-mid));
+      animation: wb var(--d, 1s) ease-in-out infinite alternate;
     }
+    @keyframes wb { from { height: 4px; opacity: 0.4; } to { height: var(--h, 30px); opacity: 1; } }
+
+    .webapp-content .section-sub { max-width: 100%; margin-bottom: 1.5rem; }
+
+    .webapp-feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 2rem; }
+    .webapp-feature-list li {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      font-size: 0.95rem; color: var(--text-mid);
+    }
+    .check { color: var(--green-bright); font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
 
     /* ─── GENRES ─── */
     .genres { background: var(--cream); }
-
     .genres-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-
     .genres-inner .section-sub { max-width: 480px; margin: 0 auto; }
 
-    .genre-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: center;
-      margin-top: 3rem;
-    }
-
+    .genre-cloud { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 3rem; }
     .genre-pill {
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: 100px;
-      padding: 10px 20px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--text-mid);
-      cursor: pointer;
-      transition: all 0.2s;
-      user-select: none;
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: 100px; padding: 10px 20px;
+      font-size: 0.88rem; font-weight: 500; color: var(--text-mid);
+      cursor: pointer; transition: all 0.2s; user-select: none;
     }
-
-    .genre-pill:hover, .genre-pill.active {
-      background: var(--green-deep);
-      border-color: var(--green-deep);
-      color: var(--white);
-    }
+    .genre-pill:hover, .genre-pill.active { background: var(--green-deep); border-color: var(--green-deep); color: var(--white); }
 
     /* ─── TESTIMONIALS ─── */
     .proof { background: var(--white); }
-
     .proof-inner { max-width: 1200px; margin: 0 auto; }
-
     .proof-header { text-align: center; margin-bottom: 4rem; }
 
-    .testimonials {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
+    .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
 
     .testimonial {
-      background: var(--cream);
-      border: 1.5px solid var(--border);
-      border-radius: 22px;
-      padding: 2rem;
+      background: var(--cream); border: 1.5px solid var(--border);
+      border-radius: 22px; padding: 2rem;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-
-    .testimonial:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 50px rgba(26,51,37,0.1);
-    }
+    .testimonial:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(26,51,37,0.1); }
 
     .stars { color: #f5a623; font-size: 0.9rem; letter-spacing: 3px; margin-bottom: 1rem; }
-
-    .testimonial blockquote {
-      font-size: 0.96rem;
-      color: var(--text-dark);
-      line-height: 1.75;
-      margin-bottom: 1.5rem;
-      font-style: italic;
-    }
-
+    .testimonial blockquote { font-size: 0.96rem; color: var(--text-dark); line-height: 1.75; margin-bottom: 1.5rem; font-style: italic; }
     .t-author { display: flex; align-items: center; gap: 0.75rem; }
-
     .avatar {
-      width: 40px; height: 40px;
-      border-radius: 50%;
+      width: 40px; height: 40px; border-radius: 50%;
       background: linear-gradient(135deg, var(--green-bright), var(--green-deep));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: var(--white);
-      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.85rem; color: var(--white); flex-shrink: 0;
+    }
+    .author-info strong { display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-dark); }
+    .author-info span { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* ─── FOUNDER ─── */
+    .founder { background: var(--cream); }
+    .founder-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.6fr;
+      gap: 5rem; align-items: center;
     }
 
-    .author-info strong { display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-dark); }
-    .author-info span  { font-size: 0.78rem; color: var(--text-muted); }
+    .founder-card {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: 28px; padding: 3rem 2.5rem;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .founder-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 4px; background: linear-gradient(90deg, var(--green-bright), var(--green-mid), var(--green-deep));
+    }
+    .founder-avatar {
+      width: 76px; height: 76px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-bright), var(--green-deep));
+      margin: 0 auto 1.25rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; font-weight: 700; color: var(--white);
+    }
+    .founder-card h3 { font-size: 1.35rem; font-weight: 800; margin-bottom: 0.2rem; color: var(--text-dark); }
+    .founder-card .title { color: var(--green-bright); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .bio-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+    .bio-tag { background: rgba(109,179,86,0.1); border: 1px solid rgba(109,179,86,0.25); border-radius: 100px; padding: 5px 13px; font-size: 0.73rem; color: var(--text-mid); font-weight: 500; }
+
+    .founder-content .section-sub { max-width: 100%; margin-bottom: 1.5rem; }
+    .founder-quote {
+      background: rgba(109,179,86,0.06); border-left: 3px solid var(--green-bright);
+      border-radius: 0 14px 14px 0; padding: 1.25rem 1.5rem;
+      font-size: 1rem; font-style: italic; color: var(--text-dark); line-height: 1.75;
+    }
+    .founder-quote strong { display: block; margin-top: 0.75rem; font-style: normal; font-size: 0.82rem; color: var(--green-bright); }
 
     /* ─── COMMUNITY ─── */
-    .community {
-      background: var(--green-deep);
-      padding: 80px 5%;
-      text-align: center;
-      color: var(--white);
-    }
-
-    .community h2 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 900;
-      letter-spacing: -0.025em;
-      margin-bottom: 2.5rem;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
+    .community { background: var(--green-deep); padding: 80px 5%; text-align: center; }
+    .community h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; letter-spacing: -0.025em; color: var(--white); margin-bottom: 2.5rem; }
+    .social-icons { display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap; }
     .social-btn {
-      width: 52px; height: 52px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      text-decoration: none;
-      color: var(--white);
+      width: 52px; height: 52px; background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15); border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; text-decoration: none; color: var(--white);
       transition: all 0.2s;
     }
-
-    .social-btn:hover {
-      background: rgba(255,255,255,0.2);
-      border-color: rgba(141,196,106,0.5);
-      transform: translateY(-2px);
-    }
+    .social-btn:hover { background: rgba(255,255,255,0.2); border-color: rgba(141,196,106,0.5); transform: translateY(-2px); }
 
     /* ─── CTA ─── */
-    .cta-section {
-      background: var(--cream);
-      padding: 120px 5%;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
+    .cta-section { background: var(--cream); padding: 120px 5%; text-align: center; position: relative; overflow: hidden; }
     .cta-section::before {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
+      content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
       width: 700px; height: 400px;
       background: radial-gradient(ellipse, rgba(109,179,86,0.12), transparent 70%);
       pointer-events: none;
     }
-
     .cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
-
-    .cta-inner h2 {
-      font-size: clamp(2.2rem, 5.5vw, 4rem);
-      font-weight: 900;
-      letter-spacing: -0.035em;
-      line-height: 1.05;
-      margin-bottom: 1.25rem;
-      color: var(--text-dark);
-    }
-
+    .cta-inner h2 { font-size: clamp(2.2rem, 5.5vw, 4rem); font-weight: 900; letter-spacing: -0.035em; line-height: 1.05; margin-bottom: 1.25rem; }
     .cta-inner p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2.5rem; }
-
-    .email-form {
-      display: flex;
-      gap: 0.75rem;
-      max-width: 460px;
-      margin: 0 auto 1.5rem;
-    }
-
-    .email-form input {
-      flex: 1;
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: 100px;
-      padding: 14px 22px;
-      color: var(--text-dark);
-      font-size: 0.95rem;
-      font-family: 'Satoshi', sans-serif;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .email-form input::placeholder { color: var(--text-muted); }
-    .email-form input:focus { border-color: var(--green-bright); }
-
-    .email-form button {
-      background: var(--green-deep);
-      color: var(--white);
-      border: none;
-      border-radius: 100px;
-      padding: 14px 26px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      font-family: 'Satoshi', sans-serif;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .email-form button:hover { background: #122518; transform: translateY(-1px); }
-
-    .cta-note { font-size: 0.78rem; color: var(--text-muted); }
-
-    /* ─── FOUNDER ─── */
-    .founder { background: var(--white); }
-
-    .founder-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .founder-card {
-      background: var(--cream);
-      border: 1.5px solid var(--border);
-      border-radius: 28px;
-      padding: 3rem 2.5rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .founder-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--green-bright), var(--green-mid), var(--green-deep));
-    }
-
-    .founder-avatar {
-      width: 76px; height: 76px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--green-bright), var(--green-deep));
-      margin: 0 auto 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--white);
-    }
-
-    .founder-card h3 { font-size: 1.35rem; font-weight: 800; margin-bottom: 0.2rem; color: var(--text-dark); }
-    .founder-card .title { color: var(--green-bright); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem; }
-
-    .bio-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
-
-    .bio-tag {
-      background: rgba(109,179,86,0.1);
-      border: 1px solid rgba(109,179,86,0.25);
-      border-radius: 100px;
-      padding: 5px 13px;
-      font-size: 0.73rem;
-      color: var(--text-mid);
-      font-weight: 500;
-    }
-
-    .founder-content .section-sub { max-width: 100%; margin-bottom: 1.5rem; }
-
-    .founder-quote {
-      background: rgba(109,179,86,0.06);
-      border-left: 3px solid var(--green-bright);
-      border-radius: 0 14px 14px 0;
-      padding: 1.25rem 1.5rem;
-      font-size: 1rem;
-      font-style: italic;
-      color: var(--text-dark);
-      line-height: 1.75;
-    }
-
-    .founder-quote strong {
-      display: block;
-      margin-top: 0.75rem;
-      font-style: normal;
-      font-size: 0.82rem;
-      color: var(--green-bright);
-    }
-
-    /* ─── FOOTER ─── */
-    footer {
-      background: var(--green-deep);
-      padding: 3.5rem 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .footer-logo img { height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; }
-
-    .footer-links { display: flex; gap: 2rem; }
-
-    .footer-links a {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--white); }
-
-    footer p { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+    .cta-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 1.25rem; }
 
     /* ─── STATS ─── */
-    .stats {
-      background: var(--green-mid);
-      padding: 2rem 5%;
-    }
-
-    .stats-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      text-align: center;
-      gap: 2rem;
-    }
-
-    .stat-val {
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: var(--white);
-      letter-spacing: -0.03em;
-    }
-
+    .stats { background: var(--green-mid); padding: 2.5rem 5%; }
+    .stats-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; gap: 2rem; }
+    .stat-val { font-size: 2.2rem; font-weight: 900; color: var(--white); letter-spacing: -0.03em; }
     .stat-lbl { font-size: 0.78rem; color: rgba(255,255,255,0.55); margin-top: 0.2rem; }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--green-deep); padding: 3.5rem 5%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo img { height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    footer p { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+
+    /* ─── SCROLL ANIM ─── */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
-      .features-inner, .founder-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .tech-inner, .founder-inner, .webapp-inner { grid-template-columns: 1fr; gap: 3rem; }
       .stats-inner { grid-template-columns: repeat(2, 1fr); }
     }
-
     @media (max-width: 600px) {
       nav ul { display: none; }
-      .feature-cards { grid-template-columns: 1fr; }
-      .email-form { flex-direction: column; }
+      .tech-cards { grid-template-columns: 1fr; }
       footer { flex-direction: column; align-items: flex-start; }
-    }
-
-    /* ─── SCROLL ANIM ─── */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
     }
   </style>
 </head>
@@ -828,10 +508,10 @@
     </a>
     <ul>
       <li><a href="#how">How It Works</a></li>
-      <li><a href="#features">Features</a></li>
+      <li><a href="#tech">Technology</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="https://www.bandm8.com/plugin" class="btn-nav-outline">Download Plugin</a></li>
-      <li><a href="https://www.bandm8.com/login" class="btn-nav">Get Started</a></li>
+      <li><a href="https://www.bandm8.com/plugin" class="btn-nav-ghost">Plugin</a></li>
+      <li><a href="https://www.bandm8.com/login" class="btn-nav">Get Started Free</a></li>
     </ul>
   </nav>
 
@@ -840,35 +520,25 @@
     <div class="hero-bg">
       <img src="https://cdn.prod.website-files.com/67caab848fbc9575b783338e/69a6de87580beb8d9e4ae6b9_Gradient%20BG.png" alt="" />
     </div>
-
     <div class="hero-content">
       <div class="hero-logo-lockup">
         <img src="https://cdn.prod.website-files.com/67caab848fbc9575b783338e/69a6e331830f29d0f97efa9c_BM8_MUSIC_LockUp.png" alt="BandM8 Music" />
       </div>
-
       <p class="hero-tagline">Unleash Your Creativity</p>
-
       <p class="hero-sub">
-        The first and only Music-to-Music real-time Generative AI creativity tool. A plugin that listens, adapts, and suggests — putting the next level of AI-enabled music creation in your hands.
+        A real-time, music-to-music generative AI that plays with you. It listens, adapts, and suggests — putting the next level of AI-enabled music creation in the hands of the musician.
       </p>
-
       <div class="hero-actions">
-        <a href="https://www.bandm8.com/login" class="btn-primary">Get Started Free</a>
-        <a href="https://www.bandm8.com/plugin" class="btn-secondary">⬇ Download Plugin</a>
+        <a href="https://www.bandm8.com/login" class="btn-primary">Get Started Free →</a>
+        <a href="https://www.bandm8.com/plugin" class="btn-secondary">⬇ Get the DAW Plugin</a>
       </div>
-
-      <!-- Demo Video -->
       <div class="hero-video-wrap fade-in">
         <video autoplay muted loop playsinline id="hero-video">
           <source src="https://bandm8-dev-media-storage.s3.us-east-1.amazonaws.com/-8940654862033645361.mp4" type="video/mp4" />
         </video>
         <button class="mute-btn" id="mute-btn" aria-label="Toggle mute">
-          <svg id="icon-muted" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white">
-            <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
-          </svg>
-          <svg id="icon-unmuted" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white" style="display:none">
-            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-          </svg>
+          <svg id="icon-muted" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+          <svg id="icon-unmuted" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
         </button>
       </div>
     </div>
@@ -877,118 +547,122 @@
   <!-- FEATURES STRIP -->
   <div class="features-strip">
     <img src="https://cdn.prod.website-files.com/67caab848fbc9575b783338e/69a6ecf590203428c1ee5ea4_Fast_Smart_Fun.png" alt="Fast, Smart, Fun" class="features-badges" />
-    <a href="https://www.bandm8.com/login" class="btn-primary">Get Started Free →</a>
+    <a href="https://www.bandm8.com/login" class="btn-primary">Start Playing Free →</a>
   </div>
 
   <!-- STATS -->
   <div class="stats">
     <div class="stats-inner">
-      <div>
-        <div class="stat-val">12+</div>
-        <div class="stat-lbl">Instrument voices</div>
-      </div>
-      <div>
-        <div class="stat-val">50+</div>
-        <div class="stat-lbl">Genre styles</div>
-      </div>
-      <div>
-        <div class="stat-val">&lt;60s</div>
-        <div class="stat-lbl">Generation time</div>
-      </div>
-      <div>
-        <div class="stat-val">∞</div>
-        <div class="stat-lbl">Creative possibilities</div>
-      </div>
+      <div><div class="stat-val">Real-time</div><div class="stat-lbl">AI generation</div></div>
+      <div><div class="stat-val">50+</div><div class="stat-lbl">Genre styles</div></div>
+      <div><div class="stat-val">MIDI</div><div class="stat-lbl">Native engine</div></div>
+      <div><div class="stat-val">Web + DAW</div><div class="stat-lbl">Play anywhere</div></div>
     </div>
   </div>
 
-  <!-- THREE PILLARS -->
+  <!-- HOW IT WORKS -->
   <section class="how" id="how">
     <div class="how-inner">
       <div class="how-header fade-in">
-        <span class="section-label">What BandM8 Does</span>
+        <span class="section-label">Three Pillars</span>
         <h2 class="section-title">Play faster. Practice smarter.<br>Finish more music.</h2>
-        <p class="section-sub">BandM8 is a plugin that plays with you — listening, adapting, and generating in real time without judgment. Install it in your DAW and your band shows up.</p>
+        <p class="section-sub">BandM8 isn't a tool you operate — it's a bandmate that responds. Open the app, start playing, and it plays back. No setup. No judgment. Just music.</p>
       </div>
-
       <div class="steps">
         <div class="step fade-in">
           <div class="step-num">01</div>
           <span class="step-icon">🎼</span>
           <h3>Create</h3>
-          <p>BandM8's AI engine — trained exclusively on MIDI data — has a deep understanding of musical structure, harmony, melody, and rhythm. Play something and it plays back something real.</p>
+          <p>BandM8 listens to what you play and generates contextually relevant, musically coherent accompaniment in real time — drums, bass, harmony, melody. Parts that feel like real musicians, because the AI was trained to think like one.</p>
         </div>
         <div class="step fade-in">
           <div class="step-num">02</div>
           <span class="step-icon">🤝</span>
           <h3>Community</h3>
-          <p>Join a growing community of musicians using AI as a creative partner, not a replacement. Share what you're making, find collaborators, and learn how others are using BandM8 in their workflow.</p>
+          <p>Join a growing community of musicians who use AI as a creative partner. Share what you're making, find collaborators, and learn how other artists are integrating BandM8 into their process.</p>
         </div>
         <div class="step fade-in">
           <div class="step-num">03</div>
           <span class="step-icon">🚀</span>
           <h3>Develop</h3>
-          <p>The more you use BandM8, the better it understands your style. It's not just a tool — it's a practice partner that helps you level up, break blocks, and finish songs you'd have otherwise abandoned.</p>
+          <p>The more you play, the more you grow. BandM8 is a practice partner that helps you work through blocks, explore new ideas, and finish songs you'd have otherwise abandoned. It's a creative accelerator.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="features" id="features">
-    <div class="features-inner">
+  <!-- WEB APP SECTION -->
+  <section class="webapp">
+    <div class="webapp-inner">
+      <div class="webapp-visual fade-in">
+        <div class="webapp-mockup-bar">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+          <span class="mockup-url">app.bandm8.com</span>
+        </div>
+        <div class="webapp-mockup-body">
+          <div class="mock-track"><span class="icon">🥁</span><span class="label">Drums</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+          <div class="mock-track"><span class="icon">🎸</span><span class="label">Bass</span><div class="bar"><div class="fill" style="width:70%"></div></div></div>
+          <div class="mock-track"><span class="icon">🎹</span><span class="label">Keys</span><div class="bar"><div class="fill" style="width:60%"></div></div></div>
+          <div class="mock-waveform" id="mock-wave"></div>
+        </div>
+      </div>
+
+      <div class="webapp-content fade-in">
+        <span class="section-label">The Web App</span>
+        <h2 class="section-title">The engine lives<br>on the web.</h2>
+        <p class="section-sub">BandM8 is a web app first. Open your browser, log in, and start playing. The DAW plugin extends that same engine directly into your production workflow — same AI, same power, wherever you make music.</p>
+        <ul class="webapp-feature-list">
+          <li><span class="check">✓</span> No install required to get started — just sign up and play</li>
+          <li><span class="check">✓</span> AI engine runs in real time as you play</li>
+          <li><span class="check">✓</span> Use in-browser or extend into your DAW via plugin</li>
+          <li><span class="check">✓</span> Mac & Windows plugin for Logic, Ableton, Pro Tools & more</li>
+          <li><span class="check">✓</span> Everything you create is yours — full commercial rights</li>
+        </ul>
+        <div style="display:flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="https://www.bandm8.com/login" class="btn-primary">Open the App →</a>
+          <a href="https://www.bandm8.com/plugin" class="btn-secondary">⬇ Download Plugin</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH -->
+  <section class="tech" id="tech">
+    <div class="tech-inner">
       <div class="fade-in">
         <span class="section-label">Under the Hood</span>
-        <h2 class="section-title" style="color:white">MIDI-native AI that<br>actually plays music.</h2>
-        <p class="section-sub">BandM8's generative engine is trained exclusively on MIDI — not samples, not loops. It understands music the way a musician does: structure, harmony, melody, rhythm. Combined with proprietary audio-to-MIDI conversion, it creates contextually relevant parts that feel like real players.</p>
+        <h2 class="section-title" style="color:white">MIDI-native AI that<br>understands music.</h2>
+        <p class="section-sub">BandM8's generative engine is trained exclusively on MIDI — not audio samples, not loops. It understands musical structure the way a trained musician does: harmony, melody, rhythm, dynamics. The result feels like playing with real people.</p>
       </div>
-
-      <div class="feature-cards">
-        <div class="feature-card fade-in">
+      <div class="tech-cards">
+        <div class="tech-card fade-in">
           <span class="icon">🧠</span>
           <h4>MIDI-trained AI</h4>
-          <p>Trained exclusively on MIDI data for deep musical understanding — not just pattern matching on audio samples.</p>
+          <p>Trained exclusively on MIDI for deep musical intelligence — not audio pattern matching.</p>
         </div>
-        <div class="feature-card fade-in">
+        <div class="tech-card fade-in">
           <span class="icon">🔊</span>
           <h4>Audio-to-MIDI conversion</h4>
-          <p>Proprietary technology converts your audio input into musical context the AI can reason about in real time.</p>
+          <p>Proprietary technology converts your playing into musical context the AI reasons about instantly.</p>
         </div>
-        <div class="feature-card fade-in">
+        <div class="tech-card fade-in">
           <span class="icon">⚡</span>
           <h4>Real-time generation</h4>
-          <p>No waiting. BandM8 responds as you play — adapting, suggesting, and generating at the speed of inspiration.</p>
+          <p>No latency, no waiting. BandM8 responds as you play — adapting and generating live.</p>
         </div>
-        <div class="feature-card fade-in">
-          <span class="icon">🔌</span>
-          <h4>DAW plugin</h4>
-          <p>Available for Mac & Windows. Drops straight into your existing workflow — no new software to learn.</p>
-        </div>
-        <div class="feature-card wide fade-in">
+        <div class="tech-card fade-in">
           <span class="icon">🎯</span>
-          <h4>Suggests without judgment</h4>
-          <p>BandM8 doesn't tell you what to play — it responds to what you're already playing. It's a creative partner that listens first. Every output is contextually relevant, musically coherent, and feels like playing with real musicians.</p>
+          <h4>Contextually coherent</h4>
+          <p>Every generated part fits your key, tempo, groove, and style. Nothing generic, nothing random.</p>
+        </div>
+        <div class="tech-card wide fade-in">
+          <span class="icon">🔌</span>
+          <h4>Web app + DAW plugin — one engine, two surfaces</h4>
+          <p>The same AI engine powers both the BandM8 web app and the DAW plugin. Start in the browser, finish in your DAW. The plugin brings the full power of BandM8 directly into Logic, Ableton, Pro Tools, and any other VST/AU host.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- BAND MEMBERS -->
-  <section class="band">
-    <div class="band-inner">
-      <span class="section-label">Your AI Band</span>
-      <h2 class="section-title">Meet the players</h2>
-      <p class="section-sub">BandM8 assembles the right musicians for your song, automatically.</p>
-
-      <div class="band-grid">
-        <div class="band-member fade-in"><span class="instrument">🥁</span><span class="name">Drums</span><span class="style">Groove-locked</span></div>
-        <div class="band-member fade-in"><span class="instrument">🎸</span><span class="name">Bass</span><span class="style">Root-aware</span></div>
-        <div class="band-member fade-in"><span class="instrument">🎸</span><span class="name">Guitar</span><span class="style">Chord-sensitive</span></div>
-        <div class="band-member fade-in"><span class="instrument">🎹</span><span class="name">Keys</span><span class="style">Harmonic fill</span></div>
-        <div class="band-member fade-in"><span class="instrument">🎻</span><span class="name">Strings</span><span class="style">Emotional arc</span></div>
-        <div class="band-member fade-in"><span class="instrument">🎷</span><span class="name">Horns</span><span class="style">Genre-matched</span></div>
-      </div>
-      <p class="band-more">+ backing vocals, percussion, synths & more</p>
     </div>
   </section>
 
@@ -997,7 +671,7 @@
     <div class="genres-inner">
       <span class="section-label">Genre Intelligence</span>
       <h2 class="section-title">Plays in every room</h2>
-      <p class="section-sub">BandM8 knows the vocabulary of each genre and plays it authentically.</p>
+      <p class="section-sub">BandM8 speaks the musical vocabulary of each genre and plays it authentically.</p>
       <div class="genre-cloud">
         <span class="genre-pill active">Indie Rock</span>
         <span class="genre-pill">Hip-Hop</span>
@@ -1029,27 +703,18 @@
       <div class="testimonials">
         <div class="testimonial fade-in">
           <div class="stars">★★★★★</div>
-          <blockquote>"I wrote the song alone in my apartment. BandM8 made it sound like we tracked it at a real studio with real players. I still can't believe what came back."</blockquote>
-          <div class="t-author">
-            <div class="avatar">MK</div>
-            <div class="author-info"><strong>Maya Kim</strong><span>Singer-songwriter, LA</span></div>
-          </div>
+          <blockquote>"I just opened the app and started playing guitar. Within seconds it had laid down a bass line and drum groove that fit perfectly. I couldn't believe how musical it was."</blockquote>
+          <div class="t-author"><div class="avatar">MK</div><div class="author-info"><strong>Maya Kim</strong><span>Singer-songwriter, LA</span></div></div>
         </div>
         <div class="testimonial fade-in">
           <div class="stars">★★★★★</div>
-          <blockquote>"I've spent thousands on session musicians. BandM8 gets me 90% there in under a minute. The stems drop right into my Logic session like they were always there."</blockquote>
-          <div class="t-author">
-            <div class="avatar">DJ</div>
-            <div class="author-info"><strong>Dario Jennings</strong><span>Producer & multi-instrumentalist</span></div>
-          </div>
+          <blockquote>"I've been using it in Ableton via the plugin. It feels like having a session band on call 24/7. The MIDI output is clean, musical, and fits straight into my productions."</blockquote>
+          <div class="t-author"><div class="avatar">DJ</div><div class="author-info"><strong>Dario Jennings</strong><span>Producer, New York</span></div></div>
         </div>
         <div class="testimonial fade-in">
           <div class="stars">★★★★★</div>
-          <blockquote>"The AI actually listens. The bass line it wrote followed the dynamics, laid back in the right spots. I was genuinely shocked at how human it felt."</blockquote>
-          <div class="t-author">
-            <div class="avatar">SR</div>
-            <div class="author-info"><strong>Sofia Reyes</strong><span>Guitarist & independent artist</span></div>
-          </div>
+          <blockquote>"The web app is ridiculously easy. I was making music with it in under a minute. It doesn't feel like software — it feels like you're jamming with someone who really listens."</blockquote>
+          <div class="t-author"><div class="avatar">SR</div><div class="author-info"><strong>Sofia Reyes</strong><span>Guitarist & independent artist</span></div></div>
         </div>
       </div>
     </div>
@@ -1066,20 +731,19 @@
           <div class="bio-tags">
             <span class="bio-tag">Musician</span>
             <span class="bio-tag">Human Switchboard</span>
-            <span class="bio-tag">Hollywood Records President</span>
+            <span class="bio-tag">Hollywood Records</span>
             <span class="bio-tag">A&R Executive</span>
             <span class="bio-tag">Alice Cooper</span>
           </div>
         </div>
       </div>
-
       <div class="founder-content fade-in">
         <span class="section-label">The Founder</span>
-        <h2 class="section-title">A musician who became<br>a label boss. Then built this.</h2>
-        <p class="section-sub">Bob Pfeifer started as a musician — founding vocalist and guitarist of Cleveland new wave band Human Switchboard. He knows what it feels like to play with a band, because he was in one.</p>
-        <p class="section-sub" style="margin-top: 1rem; margin-bottom: 1.5rem;">He went on to become President of Hollywood Records (Disney), one of the most powerful positions in the industry, where he worked with major artists across rock, pop, and beyond. BandM8 is what happens when that experience meets AI — built by someone who has been on both sides of the glass.</p>
+        <h2 class="section-title">A musician who became<br>a label president.<br>Then built this.</h2>
+        <p class="section-sub">Bob Pfeifer started as a musician — founding guitarist and vocalist of Cleveland new wave band Human Switchboard. He knows what it's like to play with a band, because he was in one.</p>
+        <p class="section-sub" style="margin-top: 1rem; margin-bottom: 1.5rem;">He went on to become President of Hollywood Records (Disney), one of the most powerful positions in the music industry, working A&R on major artist projects including Alice Cooper's '90s albums. BandM8 is what happens when that experience meets generative AI — built by someone who has lived on both sides of the creative process.</p>
         <div class="founder-quote">
-          "I've spent my career watching brilliant solo musicians struggle because they couldn't afford a band, or couldn't find the right players. BandM8 changes that. The AI doesn't replace the musician — it completes them."
+          "I've spent my career watching brilliant solo musicians struggle because they couldn't afford a full band. BandM8 changes that. The AI doesn't replace the musician — it completes them."
           <strong>— Bob Pfeifer, Founder & CEO</strong>
         </div>
       </div>
@@ -1103,15 +767,14 @@
   <!-- CTA -->
   <section class="cta-section">
     <div class="cta-inner">
-      <span class="section-label">Early Access</span>
-      <h2>Download the plugin.<br>Meet your band.</h2>
-      <p>Available for Mac & Windows. Drop it into your DAW and start playing with an AI that actually listens.</p>
-
-      <div class="hero-actions" style="justify-content:center; margin-bottom: 1rem;">
-        <a href="https://www.bandm8.com/plugin" class="btn-primary">⬇ Download for Mac</a>
-        <a href="https://www.bandm8.com/plugin" class="btn-secondary">⬇ Download for Windows</a>
+      <span class="section-label">Get Started</span>
+      <h2>Open the app.<br>Meet your band.</h2>
+      <p>Free to start. No credit card. Just open your browser, log in, and play.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="https://www.bandm8.com/login" class="btn-primary" style="font-size:1.05rem; padding:17px 40px;">Start Playing Free →</a>
+        <a href="https://www.bandm8.com/plugin" class="btn-secondary" style="font-size:1rem; padding:16px 32px;">⬇ Download DAW Plugin</a>
       </div>
-      <p class="cta-note">Free to get started · Mac & Windows · Works with any DAW</p>
+      <p class="cta-note">Web app · Mac & Windows plugin · Works with any DAW</p>
     </div>
   </section>
 
@@ -1125,19 +788,32 @@
       <a href="https://www.bandm8.com/privacy-policy" target="_blank">Privacy</a>
       <a href="https://www.bandm8.com/login">Contact</a>
     </div>
-    <p>© 2025 BandM8, Inc. All rights reserved.</p>
+    <p>© 2026 BandM8, Inc. All rights reserved.</p>
   </footer>
 
   <script>
     // Mute toggle
     document.getElementById('mute-btn').addEventListener('click', () => {
       const v = document.getElementById('hero-video');
-      const im = document.getElementById('icon-muted');
-      const iu = document.getElementById('icon-unmuted');
+      const im = document.getElementById('icon-muted'), iu = document.getElementById('icon-unmuted');
       v.muted = !v.muted;
       im.style.display = v.muted ? 'block' : 'none';
       iu.style.display = v.muted ? 'none' : 'block';
     });
+
+    // Mock waveform
+    (function() {
+      const c = document.getElementById('mock-wave');
+      const hs = [6,10,18,28,38,44,36,24,14,8,12,22,34,46,40,28,16,10,8,14,24,38,48,42,30,18,10,8];
+      hs.forEach((h, i) => {
+        const b = document.createElement('div');
+        b.className = 'w-bar';
+        b.style.setProperty('--h', h + 'px');
+        b.style.setProperty('--d', (0.7 + Math.random() * 0.8).toFixed(2) + 's');
+        b.style.animationDelay = (i * 0.05).toFixed(2) + 's';
+        c.appendChild(b);
+      });
+    })();
 
     // Genre pills
     document.querySelectorAll('.genre-pill').forEach(p => {
@@ -1148,22 +824,10 @@
     });
 
     // Scroll fade-in
-    const observer = new IntersectionObserver(entries => {
+    const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Waitlist form
-    function handleSubmit(e) {
-      e.preventDefault();
-      const msg = document.getElementById('form-msg');
-      msg.style.color = '#6db356';
-      msg.textContent = '🎸 You\'re on the list! We\'ll be in touch soon.';
-      document.getElementById('email-input').value = '';
-      document.getElementById('email-input').disabled = true;
-      e.target.querySelector('button').disabled = true;
-      e.target.querySelector('button').textContent = '✓ Joined';
-    }
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
   </script>
 </body>
 </html>
