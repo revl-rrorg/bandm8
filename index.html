@@ -491,11 +491,143 @@
     @media (max-width: 900px) {
       .tech-inner, .founder-inner, .webapp-inner { grid-template-columns: 1fr; gap: 3rem; }
       .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .webapp-inner { direction: ltr; }
+      section { padding: 70px 5%; }
     }
+
     @media (max-width: 600px) {
+      /* Nav */
+      nav { padding: 14px 5%; }
       nav ul { display: none; }
+      .nav-logo img { height: 28px; }
+
+      /* Hero */
+      .hero-content { padding: 40px 5% 30px; }
+      .hero-logo-lockup { max-width: 92vw; margin-bottom: 1.25rem; }
+      .hero-tagline { font-size: 0.72rem; letter-spacing: 0.12em; margin-bottom: 1rem; }
+      .hero-sub { font-size: 0.97rem; margin-bottom: 1.75rem; }
+      .hero-actions { flex-direction: column; align-items: stretch; gap: 0.75rem; margin-bottom: 2rem; }
+      .hero-actions .btn-primary,
+      .hero-actions .btn-secondary { text-align: center; justify-content: center; width: 100%; }
+      .hero-video-wrap { border-radius: 16px; }
+      .hero-video-wrap video { border-radius: 16px; border-width: 4px; }
+
+      /* Sections */
+      section { padding: 60px 5%; }
+      .section-title { font-size: 1.85rem; }
+
+      /* Stats */
+      .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+      .stat-val { font-size: 1.6rem; }
+
+      /* Steps */
+      .steps { grid-template-columns: 1fr; }
+      .step { padding: 2rem 1.5rem; }
+
+      /* Tech cards */
       .tech-cards { grid-template-columns: 1fr; }
-      footer { flex-direction: column; align-items: flex-start; }
+
+      /* Webapp mockup */
+      .webapp-mockup-body { grid-template-columns: 1fr 1fr; }
+
+      /* Features strip */
+      .features-strip { padding: 40px 5%; gap: 1.75rem; }
+
+      /* Founder */
+      .founder-inner { gap: 2rem; }
+      .founder-card { padding: 2rem 1.5rem; }
+
+      /* Hero actions in other sections */
+      div[style*="display:flex"][style*="gap:1rem"] {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      div[style*="display:flex"][style*="gap:1rem"] a {
+        text-align: center;
+        justify-content: center;
+      }
+
+      /* CTA */
+      .cta-inner h2 { font-size: 2rem; }
+      .cta-section { padding: 80px 5%; }
+
+      /* Footer */
+      footer { flex-direction: column; align-items: flex-start; gap: 1.25rem; padding: 2.5rem 5%; }
+      .footer-links { gap: 1.25rem; }
+
+      /* Social */
+      .social-icons { gap: 0.75rem; }
+      .social-btn { width: 46px; height: 46px; border-radius: 12px; }
+
+      /* Genre pills */
+      .genre-cloud { gap: 0.5rem; }
+      .genre-pill { padding: 8px 14px; font-size: 0.82rem; }
+
+      /* Testimonials */
+      .testimonials { grid-template-columns: 1fr; }
+
+      /* Bio tags */
+      .bio-tags { gap: 0.4rem; }
+
+      /* Webapp feature list */
+      .webapp-feature-list li { font-size: 0.9rem; }
+    }
+
+    /* Hamburger menu for mobile */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text-dark);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: 65px; left: 0; right: 0;
+      background: rgba(240,245,235,0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 5%;
+      flex-direction: column;
+      gap: 1.25rem;
+      z-index: 99;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-mobile .btn-nav {
+      background: var(--green-deep);
+      color: var(--white) !important;
+      padding: 14px 22px;
+      border-radius: 100px;
+      text-align: center;
+      border: none;
+    }
+    .nav-mobile .btn-nav-ghost {
+      border: 1.5px solid rgba(26,51,37,0.3);
+      padding: 13px 22px;
+      border-radius: 100px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .nav-hamburger { display: flex; }
     }
   </style>
 </head>
@@ -513,7 +645,19 @@
       <li><a href="https://www.bandm8.com/plugin" class="btn-nav-ghost">Plugin</a></li>
       <li><a href="https://www.bandm8.com/login" class="btn-nav">Get Started Free</a></li>
     </ul>
+    <div class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
   </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="#how" onclick="closeMobileNav()">How It Works</a>
+    <a href="#tech" onclick="closeMobileNav()">Technology</a>
+    <a href="#about" onclick="closeMobileNav()">About</a>
+    <a href="https://www.bandm8.com/plugin" class="btn-nav-ghost">⬇ Download Plugin</a>
+    <a href="https://www.bandm8.com/login" class="btn-nav">Get Started Free →</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -814,6 +958,13 @@
         c.appendChild(b);
       });
     })();
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('nav-mobile');
+    hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+    function closeMobileNav() { mobileNav.classList.remove('open'); }
+    document.querySelectorAll('.nav-mobile a').forEach(a => a.addEventListener('click', closeMobileNav));
 
     // Genre pills
     document.querySelectorAll('.genre-pill').forEach(p => {
