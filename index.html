@@ -3,46 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BandM8 — Your AI Band, Ready to Play</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <title>BandM8 — Unleash Your Creativity</title>
+  <meta name="description" content="The first and only Music-to-Music real time Generative AI creativity tool." />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #07070d;
-      --bg2:       #0e0e1a;
-      --bg3:       #13131f;
-      --purple:    #9b5de5;
-      --pink:      #f72585;
-      --cyan:      #4cc9f0;
-      --gold:      #ffd60a;
-      --white:     #f4f4ff;
-      --muted:     #8888aa;
-      --border:    rgba(155,93,229,0.2);
-      --glow:      0 0 40px rgba(155,93,229,0.25);
+      --green-deep:   #1a3325;
+      --green-mid:    #2e4a5a;
+      --green-bright: #6db356;
+      --green-light:  #8fc46a;
+      --sand:         #d9c4a0;
+      --cream:        #f0f5eb;
+      --white:        #ffffff;
+      --text-dark:    #1a2318;
+      --text-mid:     #3d4f3a;
+      --text-muted:   #7a8f75;
+      --border:       rgba(110,170,80,0.18);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--bg);
-      color: var(--white);
-      font-family: 'Inter', sans-serif;
+      font-family: 'Satoshi', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
       overflow-x: hidden;
       line-height: 1.6;
-    }
-
-    /* ─── NOISE TEXTURE ─── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.6;
     }
 
     /* ─── NAV ─── */
@@ -50,164 +39,135 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      padding: 20px 5%;
+      padding: 18px 5%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(7,7,13,0.7);
+      background: rgba(240,245,235,0.82);
       backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
 
-    .logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 1.5rem;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, var(--purple), var(--pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-decoration: none;
-    }
-
-    .logo span {
-      color: var(--cyan);
-      -webkit-text-fill-color: var(--cyan);
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
     }
 
     nav ul {
       list-style: none;
       display: flex;
       gap: 2.5rem;
+      align-items: center;
     }
 
     nav a {
-      color: var(--muted);
+      color: var(--text-mid);
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 500;
+      letter-spacing: 0.04em;
       transition: color 0.2s;
-      letter-spacing: 0.02em;
     }
 
-    nav a:hover { color: var(--white); }
+    nav a:hover { color: var(--green-deep); }
 
-    .nav-cta {
-      background: linear-gradient(135deg, var(--purple), var(--pink));
+    .btn-nav {
+      background: var(--green-deep);
       color: var(--white) !important;
-      -webkit-text-fill-color: var(--white) !important;
       padding: 10px 22px;
       border-radius: 100px;
-      font-weight: 600 !important;
-      transition: opacity 0.2s, transform 0.2s !important;
+      font-weight: 700 !important;
+      font-size: 0.85rem !important;
+      letter-spacing: 0.04em !important;
+      transition: background 0.2s, transform 0.2s !important;
     }
 
-    .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+    .btn-nav:hover {
+      background: var(--green-mid) !important;
+      transform: translateY(-1px);
+    }
+
+    .btn-nav-outline {
+      border: 1.5px solid var(--green-deep);
+      color: var(--green-deep) !important;
+      padding: 10px 22px;
+      border-radius: 100px;
+      font-weight: 700 !important;
+      font-size: 0.85rem !important;
+      transition: all 0.2s !important;
+    }
+
+    .btn-nav-outline:hover {
+      background: var(--green-deep);
+      color: var(--white) !important;
+    }
 
     /* ─── HERO ─── */
     .hero {
       min-height: 100vh;
+      position: relative;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 5% 80px;
-      position: relative;
-      overflow: hidden;
+      justify-content: flex-start;
+      padding-top: 80px;
     }
 
-    .hero-orb {
+    .hero-bg {
       position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      pointer-events: none;
+      inset: 0;
+      z-index: 0;
     }
 
-    .orb1 {
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(155,93,229,0.3), transparent 70%);
-      top: -100px; left: -100px;
-      animation: drift1 12s ease-in-out infinite alternate;
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
     }
 
-    .orb2 {
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(247,37,133,0.2), transparent 70%);
-      bottom: -50px; right: -50px;
-      animation: drift2 15s ease-in-out infinite alternate;
-    }
-
-    .orb3 {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(76,201,240,0.15), transparent 70%);
-      top: 40%; left: 50%;
-      transform: translate(-50%, -50%);
-      animation: drift3 18s ease-in-out infinite alternate;
-    }
-
-    @keyframes drift1 { from { transform: translate(0,0) scale(1); } to { transform: translate(80px, 60px) scale(1.1); } }
-    @keyframes drift2 { from { transform: translate(0,0) scale(1); } to { transform: translate(-60px, -40px) scale(1.15); } }
-    @keyframes drift3 { from { transform: translate(-50%,-50%) scale(1); } to { transform: translate(-45%,-55%) scale(1.2); } }
-
-    .badge {
-      display: inline-flex;
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 8px;
-      background: rgba(155,93,229,0.12);
-      border: 1px solid rgba(155,93,229,0.35);
-      border-radius: 100px;
-      padding: 8px 18px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--purple);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      text-align: center;
+      padding: 60px 5% 40px;
+      width: 100%;
+    }
+
+    .hero-logo-lockup {
+      max-width: min(720px, 85vw);
+      width: 100%;
       margin-bottom: 2rem;
-      position: relative;
-      z-index: 1;
     }
 
-    .badge-dot {
-      width: 6px; height: 6px;
-      background: var(--purple);
-      border-radius: 50%;
-      animation: pulse 2s ease-in-out infinite;
+    .hero-logo-lockup img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.8); }
+    .hero-tagline {
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      margin-bottom: 2rem;
     }
 
-    .hero h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      font-weight: 800;
-      line-height: 1.0;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero h1 em {
-      font-style: normal;
-      background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 50%, var(--cyan) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero p {
-      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
-      color: var(--muted);
-      max-width: 580px;
-      margin: 0 auto 2.5rem;
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--text-mid);
+      max-width: 520px;
+      margin-bottom: 2.5rem;
       font-weight: 400;
-      position: relative;
-      z-index: 1;
+      line-height: 1.7;
     }
 
     .hero-actions {
@@ -216,224 +176,194 @@
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
+      margin-bottom: 3.5rem;
     }
 
     .btn-primary {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, var(--purple), var(--pink));
-      color: #fff;
+      gap: 8px;
+      background: var(--green-deep);
+      color: var(--white);
       text-decoration: none;
       font-weight: 700;
-      font-size: 1rem;
-      padding: 16px 36px;
+      font-size: 0.95rem;
+      padding: 15px 34px;
       border-radius: 100px;
+      letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
       border: none;
       cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 0 0 rgba(155,93,229,0);
     }
 
     .btn-primary:hover {
+      background: #122518;
       transform: translateY(-2px);
-      box-shadow: 0 8px 40px rgba(155,93,229,0.5);
+      box-shadow: 0 8px 32px rgba(26,51,37,0.25);
     }
 
     .btn-secondary {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: var(--muted);
+      background: transparent;
+      color: var(--text-dark);
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 0.95rem;
-      padding: 16px 28px;
+      padding: 14px 30px;
       border-radius: 100px;
-      border: 1px solid var(--border);
-      transition: color 0.2s, border-color 0.2s;
+      border: 1.5px solid rgba(26,51,37,0.3);
+      transition: all 0.2s;
     }
 
     .btn-secondary:hover {
-      color: var(--white);
-      border-color: rgba(155,93,229,0.5);
+      border-color: var(--green-deep);
+      background: rgba(26,51,37,0.06);
     }
 
-    /* ─── WAVEFORM VISUAL ─── */
-    .waveform-wrap {
+    /* ─── VIDEO ─── */
+    .hero-video-wrap {
       position: relative;
-      z-index: 1;
-      margin-top: 4rem;
       width: 100%;
-      max-width: 700px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .waveform-container {
+    .hero-video-wrap video {
+      width: 100%;
+      height: auto;
+      border-radius: 24px;
+      border: 6px solid rgba(196,196,196,0.5);
+      display: block;
+      box-shadow: 0 40px 100px rgba(26,51,37,0.2);
+    }
+
+    .mute-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(8px);
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 3px;
-      height: 64px;
+      transition: background 0.2s, transform 0.15s;
+      z-index: 10;
     }
 
-    .wave-bar {
-      width: 4px;
-      border-radius: 2px;
-      background: linear-gradient(180deg, var(--purple), var(--pink));
-      animation: wave var(--d, 1.2s) ease-in-out infinite alternate;
-      animation-delay: var(--delay, 0s);
+    .mute-btn:hover {
+      background: rgba(0,0,0,0.8);
+      transform: scale(1.1);
     }
 
-    @keyframes wave {
-      from { height: 4px; opacity: 0.3; }
-      to   { height: var(--h, 40px); opacity: 1; }
-    }
-
-    .waveform-label {
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--muted);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-top: 0.75rem;
-    }
-
-    /* ─── LOGOS / TRUST BAR ─── */
-    .trust {
-      padding: 3rem 5%;
+    /* ─── FEATURES BADGES ─── */
+    .features-strip {
+      background: var(--white);
+      padding: 60px 5%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
       border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-      background: var(--bg2);
     }
 
-    .trust p {
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 2rem;
+    .features-badges img {
+      max-width: min(600px, 90vw);
+      width: 100%;
+      height: auto;
     }
 
-    .trust-logos {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .trust-logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: rgba(136,136,170,0.5);
-      letter-spacing: -0.02em;
-      transition: color 0.2s;
-    }
-
-    .trust-logo:hover { color: var(--muted); }
-
-    /* ─── SECTION SHARED ─── */
-    section {
-      padding: 100px 5%;
-      position: relative;
-    }
+    /* ─── SECTION BASE ─── */
+    section { padding: 100px 5%; }
 
     .section-label {
       display: inline-block;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--purple);
+      color: var(--green-bright);
       margin-bottom: 1rem;
     }
 
     .section-title {
-      font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 700;
+      font-weight: 900;
       letter-spacing: -0.03em;
-      line-height: 1.1;
+      line-height: 1.08;
+      color: var(--text-dark);
       margin-bottom: 1rem;
     }
 
     .section-sub {
       font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 500px;
+      color: var(--text-muted);
       line-height: 1.7;
     }
 
     /* ─── HOW IT WORKS ─── */
-    .how { background: var(--bg2); }
+    .how { background: var(--cream); }
 
-    .how-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .how-inner { max-width: 1200px; margin: 0 auto; }
 
-    .how-header {
-      text-align: center;
-      margin-bottom: 5rem;
-    }
+    .how-header { text-align: center; margin-bottom: 5rem; }
+
+    .how-header .section-sub { max-width: 480px; margin: 0 auto; }
 
     .steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2px;
-      background: var(--border);
-      border-radius: 24px;
-      overflow: hidden;
+      gap: 1.5rem;
     }
 
     .step {
-      background: var(--bg2);
-      padding: 2.5rem;
-      position: relative;
-      transition: background 0.3s;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .step:hover { background: var(--bg3); }
+    .step:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(26,51,37,0.1);
+    }
 
     .step-num {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 4rem;
-      font-weight: 800;
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--green-bright);
+      opacity: 0.35;
       line-height: 1;
-      background: linear-gradient(135deg, var(--purple), var(--pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
       margin-bottom: 1rem;
-      opacity: 0.6;
     }
 
+    .step-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+
     .step h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 700;
       margin-bottom: 0.75rem;
-      letter-spacing: -0.02em;
+      color: var(--text-dark);
     }
 
     .step p {
-      color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.93rem;
+      color: var(--text-muted);
       line-height: 1.7;
     }
 
-    .step-icon {
-      font-size: 2rem;
-      margin-bottom: 1.25rem;
-      display: block;
-    }
-
     /* ─── FEATURES ─── */
-    .features { background: var(--bg); }
+    .features { background: var(--green-deep); color: var(--white); }
+
+    .features .section-label { color: var(--green-light); }
+    .features .section-title { color: var(--white); }
+    .features .section-sub { color: rgba(255,255,255,0.6); }
 
     .features-inner {
       max-width: 1200px;
@@ -451,141 +381,120 @@
     }
 
     .feature-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 20px;
       padding: 1.75rem;
-      transition: border-color 0.3s, transform 0.3s;
+      transition: background 0.3s, border-color 0.3s, transform 0.3s;
     }
 
     .feature-card:hover {
-      border-color: rgba(155,93,229,0.5);
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(141,196,106,0.4);
       transform: translateY(-4px);
     }
 
-    .feature-card.wide {
-      grid-column: 1 / -1;
-    }
+    .feature-card.wide { grid-column: 1 / -1; }
 
-    .feature-card .icon {
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-      display: block;
-    }
+    .feature-card .icon { font-size: 1.6rem; margin-bottom: 0.9rem; display: block; }
 
     .feature-card h4 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--white);
       margin-bottom: 0.5rem;
-      letter-spacing: -0.01em;
     }
 
     .feature-card p {
-      font-size: 0.88rem;
-      color: var(--muted);
+      font-size: 0.86rem;
+      color: rgba(255,255,255,0.55);
       line-height: 1.6;
     }
 
-    /* ─── INSTRUMENTS VISUAL ─── */
+    /* ─── BAND MEMBERS ─── */
+    .band { background: var(--white); }
+
+    .band-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .band-inner .section-sub { max-width: 480px; margin: 0 auto 3rem; }
+
     .band-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .band-member {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 16px;
+      background: var(--cream);
+      border: 1.5px solid var(--border);
+      border-radius: 18px;
       padding: 1.5rem 1rem;
       text-align: center;
-      transition: border-color 0.3s, background 0.3s;
+      transition: all 0.25s;
       cursor: default;
     }
 
     .band-member:hover {
-      border-color: var(--purple);
-      background: rgba(155,93,229,0.08);
+      border-color: var(--green-bright);
+      background: rgba(109,179,86,0.08);
+      transform: translateY(-3px);
     }
 
-    .band-member .instrument {
-      font-size: 2.5rem;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
+    .band-member .instrument { font-size: 2.25rem; display: block; margin-bottom: 0.5rem; }
+    .band-member .name { font-size: 0.82rem; font-weight: 700; display: block; margin-bottom: 0.2rem; color: var(--text-dark); }
+    .band-member .style { font-size: 0.72rem; color: var(--text-muted); }
 
-    .band-member .name {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--white);
-      display: block;
-      margin-bottom: 0.25rem;
-      letter-spacing: 0.02em;
-    }
-
-    .band-member .style {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .band-ai-tag {
-      margin-top: 1.5rem;
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--purple);
-      font-weight: 600;
+    .band-more {
+      font-size: 0.8rem;
+      color: var(--green-bright);
+      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     /* ─── GENRES ─── */
-    .genres { background: var(--bg2); overflow: hidden; }
+    .genres { background: var(--cream); }
 
-    .genres-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
+    .genres-inner { max-width: 900px; margin: 0 auto; text-align: center; }
 
-    .genre-scroll {
+    .genres-inner .section-sub { max-width: 480px; margin: 0 auto; }
+
+    .genre-cloud {
       display: flex;
-      gap: 0.75rem;
       flex-wrap: wrap;
+      gap: 0.75rem;
       justify-content: center;
       margin-top: 3rem;
     }
 
     .genre-pill {
-      background: var(--bg3);
-      border: 1px solid var(--border);
+      background: var(--white);
+      border: 1.5px solid var(--border);
       border-radius: 100px;
       padding: 10px 20px;
       font-size: 0.88rem;
       font-weight: 500;
-      color: var(--muted);
+      color: var(--text-mid);
+      cursor: pointer;
       transition: all 0.2s;
-      cursor: default;
+      user-select: none;
     }
 
-    .genre-pill:hover,
-    .genre-pill.active {
-      background: rgba(155,93,229,0.15);
-      border-color: var(--purple);
+    .genre-pill:hover, .genre-pill.active {
+      background: var(--green-deep);
+      border-color: var(--green-deep);
       color: var(--white);
     }
 
-    .genre-pill.active {
-      color: var(--purple);
-    }
+    /* ─── TESTIMONIALS ─── */
+    .proof { background: var(--white); }
 
-    /* ─── SOCIAL PROOF ─── */
-    .proof { background: var(--bg); }
-
-    .proof-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .proof-inner { max-width: 1200px; margin: 0 auto; }
 
     .proof-header { text-align: center; margin-bottom: 4rem; }
 
@@ -596,78 +505,178 @@
     }
 
     .testimonial {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 20px;
+      background: var(--cream);
+      border: 1.5px solid var(--border);
+      border-radius: 22px;
       padding: 2rem;
-      transition: border-color 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .testimonial:hover { border-color: rgba(155,93,229,0.4); }
-
-    .testimonial .stars {
-      color: var(--gold);
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      margin-bottom: 1rem;
+    .testimonial:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 50px rgba(26,51,37,0.1);
     }
+
+    .stars { color: #f5a623; font-size: 0.9rem; letter-spacing: 3px; margin-bottom: 1rem; }
 
     .testimonial blockquote {
-      font-size: 0.98rem;
-      color: var(--white);
-      line-height: 1.7;
+      font-size: 0.96rem;
+      color: var(--text-dark);
+      line-height: 1.75;
       margin-bottom: 1.5rem;
       font-style: italic;
     }
 
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
+    .t-author { display: flex; align-items: center; gap: 0.75rem; }
 
     .avatar {
       width: 40px; height: 40px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--purple), var(--pink));
+      background: linear-gradient(135deg, var(--green-bright), var(--green-deep));
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
       font-size: 0.85rem;
+      color: var(--white);
+      flex-shrink: 0;
     }
 
-    .author-info strong {
-      display: block;
+    .author-info strong { display: block; font-size: 0.88rem; font-weight: 700; color: var(--text-dark); }
+    .author-info span  { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* ─── COMMUNITY ─── */
+    .community {
+      background: var(--green-deep);
+      padding: 80px 5%;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .community h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      margin-bottom: 2.5rem;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      width: 52px; height: 52px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      text-decoration: none;
+      color: var(--white);
+      transition: all 0.2s;
+    }
+
+    .social-btn:hover {
+      background: rgba(255,255,255,0.2);
+      border-color: rgba(141,196,106,0.5);
+      transform: translateY(-2px);
+    }
+
+    /* ─── CTA ─── */
+    .cta-section {
+      background: var(--cream);
+      padding: 120px 5%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 400px;
+      background: radial-gradient(ellipse, rgba(109,179,86,0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+
+    .cta-inner h2 {
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      margin-bottom: 1.25rem;
+      color: var(--text-dark);
+    }
+
+    .cta-inner p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2.5rem; }
+
+    .email-form {
+      display: flex;
+      gap: 0.75rem;
+      max-width: 460px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .email-form input {
+      flex: 1;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 100px;
+      padding: 14px 22px;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      font-family: 'Satoshi', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .email-form input::placeholder { color: var(--text-muted); }
+    .email-form input:focus { border-color: var(--green-bright); }
+
+    .email-form button {
+      background: var(--green-deep);
+      color: var(--white);
+      border: none;
+      border-radius: 100px;
+      padding: 14px 26px;
+      font-weight: 700;
       font-size: 0.9rem;
-      font-weight: 600;
+      font-family: 'Satoshi', sans-serif;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.2s;
     }
 
-    .author-info span {
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
+    .email-form button:hover { background: #122518; transform: translateY(-1px); }
+
+    .cta-note { font-size: 0.78rem; color: var(--text-muted); }
 
     /* ─── FOUNDER ─── */
-    .founder { background: var(--bg2); }
+    .founder { background: var(--white); }
 
     .founder-inner {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1.5fr;
+      grid-template-columns: 1fr 1.6fr;
       gap: 5rem;
       align-items: center;
     }
 
-    .founder-visual {
-      position: relative;
-    }
-
     .founder-card {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 24px;
+      background: var(--cream);
+      border: 1.5px solid var(--border);
+      border-radius: 28px;
       padding: 3rem 2.5rem;
       text-align: center;
       position: relative;
@@ -678,239 +687,96 @@
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--purple), var(--pink), var(--cyan));
+      height: 4px;
+      background: linear-gradient(90deg, var(--green-bright), var(--green-mid), var(--green-deep));
     }
 
     .founder-avatar {
-      width: 80px; height: 80px;
+      width: 76px; height: 76px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--purple), var(--pink));
+      background: linear-gradient(135deg, var(--green-bright), var(--green-deep));
       margin: 0 auto 1.25rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.75rem;
+      font-size: 1.6rem;
       font-weight: 700;
-      font-family: 'Space Grotesk', sans-serif;
+      color: var(--white);
     }
 
-    .founder-card h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
+    .founder-card h3 { font-size: 1.35rem; font-weight: 800; margin-bottom: 0.2rem; color: var(--text-dark); }
+    .founder-card .title { color: var(--green-bright); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem; }
 
-    .founder-card .title {
-      color: var(--purple);
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
-    }
-
-    .founder-card .bio-tags {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+    .bio-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
 
     .bio-tag {
-      background: rgba(155,93,229,0.1);
-      border: 1px solid rgba(155,93,229,0.25);
+      background: rgba(109,179,86,0.1);
+      border: 1px solid rgba(109,179,86,0.25);
       border-radius: 100px;
-      padding: 5px 14px;
-      font-size: 0.75rem;
-      color: var(--muted);
+      padding: 5px 13px;
+      font-size: 0.73rem;
+      color: var(--text-mid);
       font-weight: 500;
     }
 
-    .founder-content .section-sub {
-      max-width: 100%;
-      margin-bottom: 1.5rem;
-    }
+    .founder-content .section-sub { max-width: 100%; margin-bottom: 1.5rem; }
 
     .founder-quote {
-      background: rgba(155,93,229,0.08);
-      border-left: 3px solid var(--purple);
-      border-radius: 0 12px 12px 0;
+      background: rgba(109,179,86,0.06);
+      border-left: 3px solid var(--green-bright);
+      border-radius: 0 14px 14px 0;
       padding: 1.25rem 1.5rem;
       font-size: 1rem;
-      color: var(--white);
       font-style: italic;
-      line-height: 1.7;
+      color: var(--text-dark);
+      line-height: 1.75;
     }
 
-    /* ─── CTA ─── */
-    .cta-section {
-      padding: 120px 5%;
-      text-align: center;
-      background: var(--bg);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 800px; height: 400px;
-      background: radial-gradient(ellipse, rgba(155,93,229,0.15), transparent 70%);
-      pointer-events: none;
-    }
-
-    .cta-inner {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .cta-inner h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-      margin-bottom: 1.25rem;
-    }
-
-    .cta-inner h2 em {
+    .founder-quote strong {
+      display: block;
+      margin-top: 0.75rem;
       font-style: normal;
-      background: linear-gradient(135deg, var(--purple), var(--pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .cta-inner p {
-      color: var(--muted);
-      font-size: 1.1rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .email-form {
-      display: flex;
-      gap: 0.75rem;
-      max-width: 480px;
-      margin: 0 auto 1.5rem;
-    }
-
-    .email-form input {
-      flex: 1;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      padding: 15px 22px;
-      color: var(--white);
-      font-size: 0.95rem;
-      font-family: 'Inter', sans-serif;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .email-form input::placeholder { color: var(--muted); }
-
-    .email-form input:focus {
-      border-color: var(--purple);
-    }
-
-    .email-form button {
-      background: linear-gradient(135deg, var(--purple), var(--pink));
-      color: #fff;
-      border: none;
-      border-radius: 100px;
-      padding: 15px 28px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      font-family: 'Inter', sans-serif;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: opacity 0.2s, transform 0.2s;
-    }
-
-    .email-form button:hover { opacity: 0.88; transform: translateY(-1px); }
-
-    .cta-note {
-      font-size: 0.8rem;
-      color: var(--muted);
+      font-size: 0.82rem;
+      color: var(--green-bright);
     }
 
     /* ─── FOOTER ─── */
     footer {
-      padding: 3rem 5%;
-      border-top: 1px solid var(--border);
-      background: var(--bg);
+      background: var(--green-deep);
+      padding: 3.5rem 5%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: gap;
+      flex-wrap: wrap;
       gap: 1.5rem;
     }
 
-    .footer-left {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
+    .footer-logo img { height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; }
 
-    footer p {
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 1.75rem;
-    }
+    .footer-links { display: flex; gap: 2rem; }
 
     .footer-links a {
-      font-size: 0.82rem;
-      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
       text-decoration: none;
       transition: color 0.2s;
     }
 
     .footer-links a:hover { color: var(--white); }
 
-    .footer-social {
-      display: flex;
-      gap: 1rem;
-    }
+    footer p { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
 
-    .social-btn {
-      width: 36px; height: 36px;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      text-decoration: none;
-      color: var(--muted);
-      transition: all 0.2s;
-    }
-
-    .social-btn:hover {
-      border-color: var(--purple);
-      color: var(--purple);
-    }
-
-    /* ─── STAT STRIP ─── */
+    /* ─── STATS ─── */
     .stats {
-      padding: 2.5rem 5%;
-      background: var(--bg3);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      background: var(--green-mid);
+      padding: 2rem 5%;
     }
 
     .stats-inner {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -919,38 +785,37 @@
     }
 
     .stat-val {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.25rem;
-      font-weight: 800;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--white);
       letter-spacing: -0.03em;
-      background: linear-gradient(135deg, var(--purple), var(--cyan));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
 
-    .stat-lbl {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-top: 0.25rem;
-    }
+    .stat-lbl { font-size: 0.78rem; color: rgba(255,255,255,0.55); margin-top: 0.2rem; }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
-      .features-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .founder-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .band-grid { grid-template-columns: repeat(2, 1fr); }
+      .features-inner, .founder-inner { grid-template-columns: 1fr; gap: 3rem; }
       .stats-inner { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 600px) {
       nav ul { display: none; }
-      .hero h1 { font-size: 2.8rem; }
       .feature-cards { grid-template-columns: 1fr; }
-      .band-grid { grid-template-columns: repeat(3, 1fr); }
       .email-form { flex-direction: column; }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); }
       footer { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ─── SCROLL ANIM ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -958,50 +823,62 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#" class="logo">Band<span>M8</span></a>
+    <a href="#" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/67caab848fbc9575b783338e/69a6e16d951453f8e1c8b50e_Secondry_Logo_RGB.png" alt="BandM8" />
+    </a>
     <ul>
       <li><a href="#how">How It Works</a></li>
       <li><a href="#features">Features</a></li>
-      <li><a href="#genres">Genres</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#waitlist" class="nav-cta">Get Early Access</a></li>
+      <li><a href="https://www.bandm8.com/plugin" class="btn-nav-outline">Download Plugin</a></li>
+      <li><a href="https://www.bandm8.com/login" class="btn-nav">Get Started</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-orb orb1"></div>
-    <div class="hero-orb orb2"></div>
-    <div class="hero-orb orb3"></div>
-
-    <div class="badge">
-      <span class="badge-dot"></span>
-      Now in Early Access — Join the Waitlist
+    <div class="hero-bg">
+      <img src="https://cdn.prod.website-files.com/67caab848fbc9575b783338e/69a6de87580beb8d9e4ae6b9_Gradient%20BG.png" alt="" />
     </div>
 
-    <h1>
-      You play.<br>
-      <em>We bring the band.</em>
-    </h1>
+    <div class="hero-content">
+      <div class="hero-logo-lockup">
+        <img src="https://cdn.prod.website-files.com/67caab848fbc9575b783338e/69a6e331830f29d0f97efa9c_BM8_MUSIC_LockUp.png" alt="BandM8 Music" />
+      </div>
 
-    <p>
-      Record your track and BandM8's AI generates a full, custom band around your sound — bass, drums, guitar, keys, whatever the song needs. No session fees. No scheduling. Just music.
-    </p>
+      <p class="hero-tagline">Unleash Your Creativity</p>
 
-    <div class="hero-actions">
-      <a href="#waitlist" class="btn-primary">
-        🎸 Get Early Access
-      </a>
-      <a href="#how" class="btn-secondary">
-        ▶ See how it works
-      </a>
-    </div>
+      <p class="hero-sub">
+        The first and only Music-to-Music real time Generative AI creativity tool. You play — we build the band.
+      </p>
 
-    <div class="waveform-wrap">
-      <div class="waveform-container" id="waveform"></div>
-      <p class="waveform-label">AI generating your band in real time</p>
+      <div class="hero-actions">
+        <a href="https://www.bandm8.com/login" class="btn-primary">Get Started Free</a>
+        <a href="https://www.bandm8.com/plugin" class="btn-secondary">⬇ Download Plugin</a>
+      </div>
+
+      <!-- Demo Video -->
+      <div class="hero-video-wrap fade-in">
+        <video autoplay muted loop playsinline id="hero-video">
+          <source src="https://bandm8-dev-media-storage.s3.us-east-1.amazonaws.com/-8940654862033645361.mp4" type="video/mp4" />
+        </video>
+        <button class="mute-btn" id="mute-btn" aria-label="Toggle mute">
+          <svg id="icon-muted" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white">
+            <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+          </svg>
+          <svg id="icon-unmuted" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white" style="display:none">
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </section>
+
+  <!-- FEATURES STRIP -->
+  <div class="features-strip">
+    <img src="https://cdn.prod.website-files.com/67caab848fbc9575b783338e/69a6ecf590203428c1ee5ea4_Fast_Smart_Fun.png" alt="Fast, Smart, Fun" class="features-badges" />
+    <a href="https://www.bandm8.com/login" class="btn-primary">Get Started Free →</a>
+  </div>
 
   <!-- STATS -->
   <div class="stats">
@@ -1025,45 +902,33 @@
     </div>
   </div>
 
-  <!-- TRUST BAR -->
-  <div class="trust">
-    <p>Trusted by artists from</p>
-    <div class="trust-logos">
-      <span class="trust-logo">Interscope</span>
-      <span class="trust-logo">Atlantic Records</span>
-      <span class="trust-logo">Columbia</span>
-      <span class="trust-logo">Def Jam</span>
-      <span class="trust-logo">Independent Artists</span>
-    </div>
-  </div>
-
   <!-- HOW IT WORKS -->
   <section class="how" id="how">
     <div class="how-inner">
-      <div class="how-header">
+      <div class="how-header fade-in">
         <span class="section-label">The Process</span>
-        <h2 class="section-title">From solo track to full band<br>in three steps</h2>
-        <p class="section-sub" style="margin: 0 auto;">No music theory required. No studio time. Just upload, choose your vibe, and let BandM8 fill the room.</p>
+        <h2 class="section-title">From solo track<br>to full band in minutes</h2>
+        <p class="section-sub">No music theory required. No session fees. No scheduling conflicts. Just upload, choose, and play.</p>
       </div>
 
       <div class="steps">
-        <div class="step">
-          <span class="step-num">01</span>
+        <div class="step fade-in">
+          <div class="step-num">01</div>
           <span class="step-icon">🎤</span>
           <h3>Upload your track</h3>
-          <p>Drop in your vocals, guitar, piano — whatever you've recorded. A voice memo works. BandM8 analyzes your key, tempo, chord structure, and style automatically.</p>
+          <p>Drop in your vocals, guitar, piano, or a voice memo. BandM8 instantly analyzes your key, tempo, chord structure, and style.</p>
         </div>
-        <div class="step">
-          <span class="step-num">02</span>
+        <div class="step fade-in">
+          <div class="step-num">02</div>
           <span class="step-icon">🎛️</span>
           <h3>Choose your band</h3>
-          <p>Pick the instruments, genre flavor, and energy level. Want a punchy jazz trio? A lush indie-pop wall of sound? A tight funk rhythm section? You direct the session.</p>
+          <p>Pick instruments, genre, and energy level. Jazz trio? Indie-pop wall of sound? Tight funk rhythm section? You direct the session.</p>
         </div>
-        <div class="step">
-          <span class="step-num">03</span>
+        <div class="step fade-in">
+          <div class="step-num">03</div>
           <span class="step-icon">🎧</span>
-          <h3>Download the stems</h3>
-          <p>Get your full band as individual stems — mix-ready, high quality, yours to use commercially. Take them into any DAW or release as-is.</p>
+          <h3>Download your stems</h3>
+          <p>Get mix-ready individual stems for every instrument. Load into any DAW or release as-is. Fully yours, commercially licensed.</p>
         </div>
       </div>
     </div>
@@ -1072,98 +937,74 @@
   <!-- FEATURES -->
   <section class="features" id="features">
     <div class="features-inner">
-      <div>
-        <span class="section-label">Features</span>
-        <h2 class="section-title">Everything your<br>band needs to play</h2>
-        <p class="section-sub">BandM8 doesn't just add generic loops. It listens to your music and responds — the way a great session musician would.</p>
+      <div class="fade-in">
+        <span class="section-label">What Makes BandM8 Different</span>
+        <h2 class="section-title" style="color:white">Not loops.<br>A real band.</h2>
+        <p class="section-sub">BandM8 listens to your music and responds — the way a great session musician would. Every note is contextual, every part is composed for your song.</p>
       </div>
 
       <div class="feature-cards">
-        <div class="feature-card">
+        <div class="feature-card fade-in">
           <span class="icon">🧠</span>
           <h4>Music-aware AI</h4>
-          <p>Understands your key, chords, groove, and emotional arc. Every note is contextual.</p>
+          <p>Understands your key, chords, groove, and emotional arc. Context-first generation.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card fade-in">
           <span class="icon">🎼</span>
           <h4>Stem export</h4>
-          <p>Individual instrument tracks ready for your DAW. Full creative control stays with you.</p>
+          <p>Individual tracks ready for your DAW. Full creative control stays with you.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card fade-in">
           <span class="icon">🔄</span>
           <h4>Infinite revisions</h4>
-          <p>Regenerate any instrument as many times as you want. Keep what works, toss what doesn't.</p>
+          <p>Regenerate any instrument unlimited times. Keep what works, toss what doesn't.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card fade-in">
           <span class="icon">⚡</span>
           <h4>Real-time preview</h4>
-          <p>Hear a rough mix instantly before committing. Tweak and iterate at the speed of inspiration.</p>
+          <p>Hear a rough mix instantly. Tweak and iterate at the speed of inspiration.</p>
         </div>
-        <div class="feature-card wide">
+        <div class="feature-card wide fade-in">
           <span class="icon">📜</span>
-          <h4>100% commercial license — it's your music</h4>
-          <p>Every track generated by BandM8 is yours. Release it, pitch it, sync it — no royalty splits, no attribution required. What you create belongs to you.</p>
+          <h4>100% yours — full commercial license</h4>
+          <p>Every track generated belongs to you. Release it, pitch it, sync it. No royalty splits, no attribution. What you create with BandM8 is your music.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BAND VISUAL -->
-  <section style="background: var(--bg2); padding: 60px 5%;">
-    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+  <!-- BAND MEMBERS -->
+  <section class="band">
+    <div class="band-inner">
       <span class="section-label">Your AI Band</span>
-      <h2 class="section-title" style="margin-bottom: 0.5rem;">Meet the players</h2>
-      <p class="section-sub" style="margin: 0 auto 3rem;">BandM8 assembles the right musicians for your song — automatically.</p>
+      <h2 class="section-title">Meet the players</h2>
+      <p class="section-sub">BandM8 assembles the right musicians for your song, automatically.</p>
 
       <div class="band-grid">
-        <div class="band-member">
-          <span class="instrument">🥁</span>
-          <span class="name">Drums</span>
-          <span class="style">Groove-locked</span>
-        </div>
-        <div class="band-member">
-          <span class="instrument">🎸</span>
-          <span class="name">Bass</span>
-          <span class="style">Root-aware</span>
-        </div>
-        <div class="band-member">
-          <span class="instrument">🎸</span>
-          <span class="name">Guitar</span>
-          <span class="style">Chord-sensitive</span>
-        </div>
-        <div class="band-member">
-          <span class="instrument">🎹</span>
-          <span class="name">Keys</span>
-          <span class="style">Harmonic fill</span>
-        </div>
-        <div class="band-member">
-          <span class="instrument">🎻</span>
-          <span class="name">Strings</span>
-          <span class="style">Emotional arc</span>
-        </div>
-        <div class="band-member">
-          <span class="instrument">🎷</span>
-          <span class="name">Horns</span>
-          <span class="style">Genre-matched</span>
-        </div>
+        <div class="band-member fade-in"><span class="instrument">🥁</span><span class="name">Drums</span><span class="style">Groove-locked</span></div>
+        <div class="band-member fade-in"><span class="instrument">🎸</span><span class="name">Bass</span><span class="style">Root-aware</span></div>
+        <div class="band-member fade-in"><span class="instrument">🎸</span><span class="name">Guitar</span><span class="style">Chord-sensitive</span></div>
+        <div class="band-member fade-in"><span class="instrument">🎹</span><span class="name">Keys</span><span class="style">Harmonic fill</span></div>
+        <div class="band-member fade-in"><span class="instrument">🎻</span><span class="name">Strings</span><span class="style">Emotional arc</span></div>
+        <div class="band-member fade-in"><span class="instrument">🎷</span><span class="name">Horns</span><span class="style">Genre-matched</span></div>
       </div>
-      <p class="band-ai-tag">+ backing vocals, percussion, synths & more</p>
+      <p class="band-more">+ backing vocals, percussion, synths & more</p>
     </div>
   </section>
 
   <!-- GENRES -->
-  <section class="genres" id="genres">
+  <section class="genres">
     <div class="genres-inner">
       <span class="section-label">Genre Intelligence</span>
       <h2 class="section-title">Plays in every room</h2>
-      <p class="section-sub" style="margin: 0 auto;">From bedroom pop to jazz fusion to hip-hop — BandM8 knows the vocabulary of each genre and plays it authentically.</p>
-      <div class="genre-scroll">
+      <p class="section-sub">BandM8 knows the vocabulary of each genre and plays it authentically.</p>
+      <div class="genre-cloud">
         <span class="genre-pill active">Indie Rock</span>
-        <span class="genre-pill">Hip-Hop & Trap</span>
+        <span class="genre-pill">Hip-Hop</span>
         <span class="genre-pill">Jazz & Fusion</span>
         <span class="genre-pill">R&B / Soul</span>
         <span class="genre-pill">Folk / Americana</span>
-        <span class="genre-pill">Electronic / Synth</span>
+        <span class="genre-pill">Electronic</span>
         <span class="genre-pill">Pop</span>
         <span class="genre-pill">Blues</span>
         <span class="genre-pill">Classical</span>
@@ -1178,55 +1019,46 @@
     </div>
   </section>
 
-  <!-- SOCIAL PROOF -->
+  <!-- TESTIMONIALS -->
   <section class="proof">
     <div class="proof-inner">
-      <div class="proof-header">
-        <span class="section-label">Early Listeners</span>
-        <h2 class="section-title">Artists are already playing</h2>
+      <div class="proof-header fade-in">
+        <span class="section-label">Early Artists</span>
+        <h2 class="section-title">Already playing</h2>
       </div>
       <div class="testimonials">
-        <div class="testimonial">
+        <div class="testimonial fade-in">
           <div class="stars">★★★★★</div>
           <blockquote>"I wrote the song alone in my apartment. BandM8 made it sound like we tracked it at a real studio with real players. I still can't believe what came back."</blockquote>
-          <div class="testimonial-author">
+          <div class="t-author">
             <div class="avatar">MK</div>
-            <div class="author-info">
-              <strong>Maya Kim</strong>
-              <span>Singer-songwriter, LA</span>
-            </div>
+            <div class="author-info"><strong>Maya Kim</strong><span>Singer-songwriter, LA</span></div>
           </div>
         </div>
-        <div class="testimonial">
+        <div class="testimonial fade-in">
           <div class="stars">★★★★★</div>
-          <blockquote>"I've spent thousands on session musicians. BandM8 gets me 90% of the way there in under a minute. The stems drop right into my Logic session like they were always there."</blockquote>
-          <div class="testimonial-author">
+          <blockquote>"I've spent thousands on session musicians. BandM8 gets me 90% there in under a minute. The stems drop right into my Logic session like they were always there."</blockquote>
+          <div class="t-author">
             <div class="avatar">DJ</div>
-            <div class="author-info">
-              <strong>Dario Jennings</strong>
-              <span>Producer & multi-instrumentalist</span>
-            </div>
+            <div class="author-info"><strong>Dario Jennings</strong><span>Producer & multi-instrumentalist</span></div>
           </div>
         </div>
-        <div class="testimonial">
+        <div class="testimonial fade-in">
           <div class="stars">★★★★★</div>
-          <blockquote>"The AI actually listens. The bass line it wrote for my track felt human — it followed the dynamics, laid back in the right spots. I was genuinely shocked."</blockquote>
-          <div class="testimonial-author">
+          <blockquote>"The AI actually listens. The bass line it wrote followed the dynamics, laid back in the right spots. I was genuinely shocked at how human it felt."</blockquote>
+          <div class="t-author">
             <div class="avatar">SR</div>
-            <div class="author-info">
-              <strong>Sofia Reyes</strong>
-              <span>Guitarist & independent artist</span>
-            </div>
+            <div class="author-info"><strong>Sofia Reyes</strong><span>Guitarist & independent artist</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOUNDER / ABOUT -->
+  <!-- FOUNDER -->
   <section class="founder" id="about">
     <div class="founder-inner">
-      <div class="founder-visual">
+      <div class="founder-visual fade-in">
         <div class="founder-card">
           <div class="founder-avatar">BP</div>
           <h3>Bob Pfeifer</h3>
@@ -1236,118 +1068,102 @@
             <span class="bio-tag">Virgin Records</span>
             <span class="bio-tag">Sony Music</span>
             <span class="bio-tag">A&R Veteran</span>
-            <span class="bio-tag">25+ years</span>
+            <span class="bio-tag">25+ Years</span>
           </div>
         </div>
       </div>
 
-      <div class="founder-content">
-        <span class="section-label">About</span>
-        <h2 class="section-title">Built by someone who<br>knows the industry</h2>
+      <div class="founder-content fade-in">
+        <span class="section-label">The Founder</span>
+        <h2 class="section-title">Built by someone who lived it</h2>
         <p class="section-sub">Bob Pfeifer spent over two decades at the center of the music industry — signing artists, developing talent, and watching great songs never reach their potential because musicians couldn't afford a full band.</p>
-        <p class="section-sub" style="margin-top: 1rem;">BandM8 is his answer to that problem. Not a sample library. Not a loop pack. An AI bandmate that actually listens.</p>
-
+        <p class="section-sub" style="margin-top: 1rem; margin-bottom: 1.5rem;">BandM8 is his answer to that problem. Not a sample library. Not a loop pack. An AI bandmate that actually listens.</p>
         <div class="founder-quote">
           "Every great song deserves a great band. BandM8 exists so that no solo artist ever has to choose between their vision and their budget."
-          <br><br>
-          <strong style="font-style: normal; font-size: 0.85rem; color: var(--purple);">— Bob Pfeifer, Founder</strong>
+          <strong>— Bob Pfeifer, Founder</strong>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA / WAITLIST -->
-  <section class="cta-section" id="waitlist">
+  <!-- COMMUNITY -->
+  <div class="community">
+    <h2>Join the BandM8 Community</h2>
+    <div class="social-icons">
+      <a href="#" class="social-btn" title="Discord">💬</a>
+      <a href="#" class="social-btn" title="Instagram">📸</a>
+      <a href="#" class="social-btn" title="Twitter/X">𝕏</a>
+      <a href="#" class="social-btn" title="YouTube">▶</a>
+      <a href="#" class="social-btn" title="TikTok">♪</a>
+      <a href="#" class="social-btn" title="Facebook">ƒ</a>
+      <a href="#" class="social-btn" title="Spotify">🎵</a>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
     <div class="cta-inner">
       <span class="section-label">Early Access</span>
-      <h2>Ready to <em>find<br>your band?</em></h2>
-      <p>Join the waitlist and be among the first artists to use BandM8. We're onboarding musicians now.</p>
+      <h2>Ready to find<br>your band?</h2>
+      <p>Join thousands of musicians already using BandM8 to bring their songs to life.</p>
 
       <form class="email-form" onsubmit="handleSubmit(event)">
         <input type="email" placeholder="your@email.com" required id="email-input" />
         <button type="submit">Join Waitlist →</button>
       </form>
-
       <p class="cta-note" id="form-msg">No spam. Just music. Unsubscribe anytime.</p>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-left">
-      <a href="#" class="logo">Band<span>M8</span></a>
-      <p>© 2025 BandM8, Inc. All rights reserved.</p>
+    <div class="footer-logo">
+      <img src="https://cdn.prod.website-files.com/67caab848fbc9575b783338e/69a719d4c5c44f2fd7efd855_Secondry_Logo_RGB%20(1).png" alt="BandM8" />
     </div>
-
     <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Contact</a>
-      <a href="#">Blog</a>
+      <a href="https://www.bandm8.com/tos" target="_blank">Terms</a>
+      <a href="https://www.bandm8.com/privacy-policy" target="_blank">Privacy</a>
+      <a href="https://www.bandm8.com/login">Contact</a>
     </div>
-
-    <div class="footer-social">
-      <a href="#" class="social-btn" title="Instagram">📸</a>
-      <a href="#" class="social-btn" title="Twitter/X">𝕏</a>
-      <a href="#" class="social-btn" title="YouTube">▶</a>
-      <a href="#" class="social-btn" title="TikTok">♪</a>
-    </div>
+    <p>© 2025 BandM8, Inc. All rights reserved.</p>
   </footer>
 
   <script>
-    // ─── Waveform generator
-    (function() {
-      const container = document.getElementById('waveform');
-      const bars = 52;
-      const heights = [8,12,18,26,34,42,38,30,20,14,10,16,24,36,48,40,28,18,12,8,14,22,32,46,54,48,36,24,14,8,12,20,30,44,52,44,32,20,12,8,16,26,38,50,42,30,18,10,8,14,20,28];
-      for (let i = 0; i < bars; i++) {
-        const bar = document.createElement('div');
-        bar.className = 'wave-bar';
-        const h = heights[i % heights.length];
-        bar.style.setProperty('--h', h + 'px');
-        bar.style.setProperty('--d', (0.8 + Math.random() * 0.8).toFixed(2) + 's');
-        bar.style.setProperty('--delay', (i * 0.04).toFixed(2) + 's');
-        container.appendChild(bar);
-      }
-    })();
+    // Mute toggle
+    document.getElementById('mute-btn').addEventListener('click', () => {
+      const v = document.getElementById('hero-video');
+      const im = document.getElementById('icon-muted');
+      const iu = document.getElementById('icon-unmuted');
+      v.muted = !v.muted;
+      im.style.display = v.muted ? 'block' : 'none';
+      iu.style.display = v.muted ? 'none' : 'block';
+    });
 
-    // ─── Genre pill toggle
-    document.querySelectorAll('.genre-pill').forEach(pill => {
-      pill.addEventListener('click', () => {
-        document.querySelectorAll('.genre-pill').forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
+    // Genre pills
+    document.querySelectorAll('.genre-pill').forEach(p => {
+      p.addEventListener('click', () => {
+        document.querySelectorAll('.genre-pill').forEach(x => x.classList.remove('active'));
+        p.classList.add('active');
       });
     });
 
-    // ─── Waitlist form
+    // Scroll fade-in
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Waitlist form
     function handleSubmit(e) {
       e.preventDefault();
-      const input = document.getElementById('email-input');
       const msg = document.getElementById('form-msg');
-      msg.style.color = '#9b5de5';
+      msg.style.color = '#6db356';
       msg.textContent = '🎸 You\'re on the list! We\'ll be in touch soon.';
-      input.value = '';
-      input.disabled = true;
+      document.getElementById('email-input').value = '';
+      document.getElementById('email-input').disabled = true;
       e.target.querySelector('button').disabled = true;
       e.target.querySelector('button').textContent = '✓ Joined';
     }
-
-    // ─── Scroll fade-in
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.style.opacity = '1';
-          e.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.step, .feature-card, .testimonial, .band-member').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(24px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
-    });
   </script>
 </body>
 </html>
