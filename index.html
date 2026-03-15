@@ -203,10 +203,35 @@
       align-items: center;
       gap: 2.5rem;
       border-top: 1px solid var(--border);
-      overflow: hidden;
     }
-    .features-badges { width: 100%; max-width: 560px; text-align: center; }
-    .features-badges img { width: 100%; max-width: 100%; height: auto; display: block; }
+    .fsf-badges {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .fsf-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .fsf-check {
+      font-size: 1.4rem;
+      color: var(--green-bright);
+      font-weight: 900;
+    }
+    .fsf-word {
+      font-size: clamp(1.6rem, 5vw, 2.5rem);
+      font-weight: 900;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+    }
+    .fsf-divider {
+      width: 1px;
+      height: 2.5rem;
+      background: var(--border);
+    }
 
     /* ─── SECTION BASE ─── */
     section { padding: 100px 5%; }
@@ -535,8 +560,8 @@
 
       /* Features strip */
       .features-strip { padding: 40px 5%; gap: 1.75rem; }
-      .features-badges { max-width: 100%; }
-      .features-badges img { max-width: 100%; }
+      .fsf-word { font-size: 1.5rem; }
+      .fsf-divider { display: none; }
 
       /* Founder */
       .founder-inner { gap: 2rem; }
@@ -695,7 +720,13 @@
 
   <!-- FEATURES STRIP -->
   <div class="features-strip">
-    <img src="https://cdn.prod.website-files.com/67caab848fbc9575b783338e/69a6ecf590203428c1ee5ea4_Fast_Smart_Fun.png" alt="Fast, Smart, Fun" class="features-badges" />
+    <div class="fsf-badges">
+      <div class="fsf-badge"><span class="fsf-check">✓</span><span class="fsf-word">Fast</span></div>
+      <div class="fsf-divider"></div>
+      <div class="fsf-badge"><span class="fsf-check">✓</span><span class="fsf-word">Smart</span></div>
+      <div class="fsf-divider"></div>
+      <div class="fsf-badge"><span class="fsf-check">✓</span><span class="fsf-word">Fun</span></div>
+    </div>
     <a href="https://www.bandm8.com/login" class="btn-primary">Start Playing Free →</a>
   </div>
 
